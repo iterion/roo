@@ -636,8 +636,8 @@ class Roo::Base
           file.write(net.read)
         }
       end
-    rescue OpenURI::HTTPError
-      raise "could not open #{uri}"
+    rescue OpenURI::HTTPError => e
+      raise "could not open #{uri} #{e.message}"
     end
     tempfilename
   end
